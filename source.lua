@@ -754,7 +754,7 @@ local TabList = Main.TabList
 local dragBar = Rayfield:FindFirstChild('Drag')
 local dragInteract = dragBar and dragBar.Interact or nil
 local dragBarCosmetic = dragBar and dragBar.Drag or nil
-
+local Banner = Rayfield.Loading.Banner
 local dragOffset = 255
 local dragOffsetMobile = 150
 
@@ -796,6 +796,7 @@ local function ChangeTheme(Theme)
 		Rayfield.Main.Topbar.Divider.BackgroundColor3 = SelectedTheme.ElementStroke
 	end
 
+	Banner:Destroy()
 	Main.Search.BackgroundColor3 = SelectedTheme.TextColor
 	Main.Search.Shadow.ImageColor3 = SelectedTheme.TextColor
 	Main.Search.Search.ImageColor3 = SelectedTheme.TextColor
@@ -4008,4 +4009,5 @@ task.delay(4, function()
 end)
 
 return RayfieldLibrary
+
 
